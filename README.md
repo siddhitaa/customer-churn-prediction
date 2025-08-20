@@ -1,6 +1,6 @@
 # Customer Churn Prediction & Analysis
 
-### This project focuses on predicting customer churn for a telecom company using the Telco Customer Churn dataset from Kaggle.
+### This project focuses on predicting customer churn for a telecom company using the [Telco Customer Churn dataset](https://www.kaggle.com/datasets/blastchar/telco-customer-churn) from Kaggle.
 
 Churn (when customers leave a service) is a big issue for subscription businesses. If we can figure out which customers are most likely to churn, the company can take action to retain them—like offering discounts, better plans, or improved support.
 
@@ -73,4 +73,4 @@ With this model, a telecom company could focus retention campaigns on the high-r
 ### ✨ Summary
 This project shows an end-to-end workflow: data cleaning → feature engineering → modeling → evaluation → visualization-ready output.
 
-### Also take a look at my Tableau vizzes here: [Link]([url](https://public.tableau.com/app/profile/siddhitabagwe/viz/KaggleTelcoCustomerChurn/CustomerChurnRateDashboard))
+### Also take a look at my Tableau viz here: [KaggleTelcoCustomerChurn](https://public.tableau.com/app/profile/siddhitabagwe/viz/KaggleTelcoCustomerChurn/CustomerChurnRateDashboard)
