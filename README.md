@@ -1,76 +1,76 @@
-# customer-churn-prediction
+# Customer Churn Prediction & Analysis
 
-Uses Kaggle Telco Customer Churn data: https://www.kaggle.com/datasets/blastchar/telco-customer-churn
+### This project focuses on predicting customer churn for a telecom company using the Telco Customer Churn dataset from Kaggle.
 
-###  Customer Churn Prediction and Analysis — Project Overview
-This project aims to predict customer churn for a telecom company using machine learning and provide actionable insights through interactive visualizations. Customer churn—the loss of customers—is a critical business problem that impacts revenue and growth. Early identification of at-risk customers enables targeted retention strategies.
+Churn (when customers leave a service) is a big issue for subscription businesses. If we can figure out which customers are most likely to churn, the company can take action to retain them—like offering discounts, better plans, or improved support.
 
-### Data and Preparation
-The project uses the publicly available Telco Customer Churn dataset, which includes customer demographics, service details, account information, and churn labels. Initial steps involve:
+### 🔍 What I Did
 
-### Data cleaning 
-Handling missing or inconsistent values (e.g., converting TotalCharges to numeric),
+#### Loaded the dataset (7,043 customers).
 
-### Encoding 
-Transforming categorical variables into numerical formats suitable for machine learning,
+#### Cleaned and prepared the data:
 
-### Feature engineering 
-Creating relevant features such as tenure, contract types, and payment methods.
+Converted TotalCharges from text to numeric and filled missing values with the median.
 
-### Modeling
-A Random Forest Classifier is trained to predict the probability that a customer will churn based on the input features. Model development includes:
+Turned Yes/No columns into 1/0.
 
-Splitting data into training and testing sets,
+One-hot encoded categorical columns like Contract, Payment Method, Internet Service, etc.
 
-Training the model on the training set,
+Split the data into training (80%) and testing (20%).
 
-Evaluating performance using metrics like accuracy, precision, recall, and ROC AUC,
+Built a Random Forest Classifier to predict churn.
 
-Generating churn risk scores for each customer in the test set.
+#### Evaluated performance using:
 
-### Output
-The model outputs a scored dataset containing:
+Classification report (precision, recall, F1-score).
 
-Customer features,
+ROC AUC score (0.83 → good discrimination between churn and non-churn customers).
 
-Actual churn label,
+Scored customers with churn risk probabilities and saved the results in churn_scored.csv.
 
-Predicted churn risk score (a probability between 0 and 1).
+Prepared for visualization by exporting the scored data so it can be used in Tableau (or any dashboarding tool).
 
-This output is saved as a CSV file (churn_scored.csv), which serves as the basis for visualization.
+### 📊 Results
 
-### Visualization
-Using Tableau Public, an interactive dashboard is created to visualize the churn analysis results:
+Overall model accuracy: ~80%
 
-Distribution of churn risk scores across customers,
+ROC AUC: 0.83 (shows good separation between churn vs non-churn customers).
 
-Churn rates segmented by contract types and tenure,
+Model does a solid job predicting customers who stay, but catching churners is harder (as expected in imbalanced datasets).
 
-Filters for exploring data by payment methods and other demographics,
+### 👉 Example: Month-to-month contracts and electronic check payments showed higher churn risk, while longer tenure and two-year contracts had lower churn.
 
-Clear, color-coded visual elements that highlight high-risk segments.
+### 🛠 Tech Stack
 
-### Business Impact
-This end-to-end solution combines predictive modeling with rich visual storytelling to:
+Python: pandas, scikit-learn, numpy
 
-Identify customers at highest risk of churn,
+Modeling: Random Forest Classifier
 
-Help business teams prioritize retention efforts,
+Visualization: Tableau Public (dashboard-ready CSV output)
 
-Inform decisions on contract offers and customer engagement strategies,
+Other: joblib (to save the trained model for reuse)
 
-Provide an easily accessible dashboard for continuous monitoring.
+### 📂 Project Files
 
-### How to Use
-Run the Jupyter notebook Customer_Churn.ipynb to reproduce the data preparation, modeling, and scoring steps,
+Customer_Churn.ipynb → Jupyter notebook with full workflow.
 
-Load the generated CSV into Tableau to explore or update the dashboard,
+churn_model.pkl → Saved Random Forest model.
 
-Use the interactive dashboard link to view insights without installing any software.
+churn_scored.csv → Scored dataset with churn probabilities (for dashboards).
 
-### Technologies Used
-Python (pandas, scikit-learn, matplotlib) for data analysis and modeling,
+WA_Fn-UseC_-Telco-Customer-Churn.csv → Original dataset (needs to be downloaded from Kaggle).
 
-Tableau Public for interactive visualizations,
+### 💡 Business Takeaways
 
-Git and GitHub for version control and portfolio hosting.
+Customers on month-to-month contracts are much more likely to churn.
+
+Electronic check payments are strongly linked with higher churn.
+
+Long-term contracts = stickier customers.
+
+With this model, a telecom company could focus retention campaigns on the high-risk groups and potentially save significant revenue.
+
+### ✨ Summary
+This project shows an end-to-end workflow: data cleaning → feature engineering → modeling → evaluation → visualization-ready output.
+
+### Also take a look at my Tableau vizzes here: [Link]([url](https://public.tableau.com/app/profile/siddhitabagwe/viz/KaggleTelcoCustomerChurn/CustomerChurnRateDashboard))
